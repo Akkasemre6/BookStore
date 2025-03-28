@@ -1,5 +1,6 @@
 package Payload.Request.business;
 
+import Entity.business.Order;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,6 +27,9 @@ public class BookUpdateRequest {
     private String imageUrl;
 
     private String description;
+
+    private Order order;
+
 
 
 

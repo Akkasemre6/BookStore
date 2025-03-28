@@ -2,6 +2,7 @@ package Entity.business;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,6 +29,11 @@ public class Book {
     private String imageUrl;
 
     private String description;
+
+    @ManyToOne
+    private OrderItem orderItem;
+
+    private int quantity;
 
 
 
