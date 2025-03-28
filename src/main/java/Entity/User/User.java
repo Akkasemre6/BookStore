@@ -1,5 +1,6 @@
 package Entity.User;
 
+import Entity.business.Order;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -26,4 +27,7 @@ public class User {
     private String email;
 
     private LocalDateTime createdAt;
+
+    @ManyToOne
+    private Order order;
 }
