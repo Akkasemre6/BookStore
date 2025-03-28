@@ -1,16 +1,17 @@
 package Payload.Response.Business;
 
 
+import lombok.Builder;
+import lombok.Data;
 
+@Builder
+@Data
 public class OrderItemResponse {
 
 
-    private OrderResponse order;
-
-    private BookResponse book;
-
+    private long bookId;
+    private String bookTitle;
+    private double bookPrice;
     private Integer quantity;
-
-
 
 }

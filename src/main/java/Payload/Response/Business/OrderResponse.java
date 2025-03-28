@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.util.List;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,10 +18,9 @@ import org.antlr.v4.runtime.misc.NotNull;
 public class OrderResponse {
 
 
-    @NotNull
-    private long bookId;
+    private long id;
+    private double totalPrice;
+    private List<OrderItemResponse> items;
 
-
-    private Integer quantity;
 
 }

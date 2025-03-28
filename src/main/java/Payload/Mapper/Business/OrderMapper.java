@@ -5,23 +5,19 @@ import Payload.Response.Business.OrderResponse;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderMapper {
 
-    public static Order mapOrderResponseToOrder(OrderResponse orderResponse) {
-        return Order.builder()
-                .user(orderResponse.getUser())
-                .price(orderResponse.getPrice())
-                .order(orderResponse.getOrder())
+    public static OrderResponse mapOrderToOrderResponse(Order order) {
+        return OrderResponse.builder()
+                .id(order.getId())
+                .totalPrice(order.getTotalPrice())
+                .items(order.getItems().stream().map(OrderItemMapper::mapOrderItemToOrderItemResponse).toList())
                 .build();
     }
 
-    public static OrderResponse mapOrderToOrderResponse(Order order){
-        return OrderResponse.builder()
-                .user(order.getUser())
-                .price(order.getPrice())
-                .build();
-    }
 
 }
