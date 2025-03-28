@@ -2,6 +2,7 @@ package controller.business;
 
 import Entity.User.User;
 import Entity.business.Order;
+import Payload.Request.business.OrderCreateRequest;
 import Payload.Request.business.OrderRequest;
 import Payload.Response.Business.OrderResponse;
 import Service.business.OrderService;
@@ -12,24 +13,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/order")
+@RequestMapping(path = "/orders")
 @AllArgsConstructor
 public class OrderController {
 
     private final OrderService orderService;
 
-    @GetMapping(path = "/getAllOrder")
-    ResponseEntity<List<OrderResponse>>  getAllOrder(){
-        return orderService.getAllOrder();
+    @PostMapping
+    public ResponseEntity<OrderResponse> createOrder
+            (@RequestBody OrderCreateRequest request) {
+         return orderService.createOrder(request);
+
     }
 
-    @PostMapping
-    public ResponseEntity<OrderResponse> createOrder(
-            @RequestBody OrderRequest request,
-            @AuthenticationPrincipal User user
-            ){
-        return orderService.createOrder(user,request.getItems());
-
+    @GetMapping(path = "/{orderId}")
+    private ResponseEntity<OrderResponse> getOrderById(@PathVariable long orderId){
+        return orderService.getOrderById(orderId);
     }
 
 
