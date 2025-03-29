@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/Book")
+@RequestMapping(path = "/book")
 @AllArgsConstructor
 public class BookController {
 
@@ -19,30 +19,27 @@ public class BookController {
 
     private final BookService bookService;
 
-
-
-    @PutMapping(path = "/createBook")
+    @PutMapping(path = "/create")
     public ResponseMessage<BookResponse> createBook(@RequestBody Book book){
         return bookService.createBook(book);
-
     }
 
-    @GetMapping(path = "/getAllBooks")
+    @GetMapping(path = "/getAll")
     public ResponseEntity<List<BookResponse>> getAllBooks(){
         return bookService.getAllBooks();
     }
 
-    @GetMapping(path = "/getBookById/{id}")
+    @GetMapping(path = "/{id}")
     public ResponseEntity<BookResponse> getBookById(@PathVariable long id){
         return bookService.getBookById(id);
     }
 
-    @PatchMapping(path = "/updateBook/{id}")
+    @PatchMapping(path = "/update/{id}")
     public ResponseEntity<BookResponse> updateBook(@PathVariable long id, @RequestBody Book book){
         return bookService.updateBook(id,book);
     }
 
-    @DeleteMapping(path = "/deleteBook/{id}")
+    @DeleteMapping(path = "/delete/{id}")
     public String deleteBook(@PathVariable long id){
         return bookService.deleteBook(id);
     }
