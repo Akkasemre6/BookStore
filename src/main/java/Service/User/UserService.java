@@ -75,4 +75,15 @@ public class UserService {
         }
         return ErrorMessages. USER_NOT_FOUND;
     }
+
+    public Boolean getAll(){
+        if(userRepository.findAll().isEmpty()){
+            return Boolean.TRUE;
+        }
+        return Boolean.FALSE;
+    }
+
+    public void createFirstUser(User user){
+        userRepository.save(user);
+    }
 }
