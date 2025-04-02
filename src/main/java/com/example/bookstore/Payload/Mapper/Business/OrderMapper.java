@@ -1,12 +1,12 @@
-package Payload.Mapper.Business;
+package com.example.bookstore.Payload.Mapper.Business;
 
-import Entity.business.Order;
-import Payload.Response.Business.OrderResponse;
+
+import com.example.bookstore.Entity.business.Order;
+import com.example.bookstore.Payload.Response.Business.OrderResponse;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
 
-
-
-
+@Component
 @AllArgsConstructor
 public class OrderMapper {
 

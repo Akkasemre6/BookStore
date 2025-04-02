@@ -1,6 +1,7 @@
-package Payload.Response.Business;
+package com.example.bookstore.Payload.Response.Business;
 
-import Entity.business.Order;
+
+import com.example.bookstore.Entity.business.Order;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,8 +29,6 @@ public class BookResponse {
     private String description;
 
     private Order order;
-
-
 
 
 }

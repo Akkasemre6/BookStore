@@ -1,9 +1,12 @@
-package Payload.Mapper.Business;
+package com.example.bookstore.Payload.Mapper.Business;
 
-import Entity.business.Book;
-import Payload.Request.business.BookUpdateRequest;
-import Payload.Response.Business.BookResponse;
 
+import com.example.bookstore.Entity.business.Book;
+import com.example.bookstore.Payload.Request.business.BookUpdateRequest;
+import com.example.bookstore.Payload.Response.Business.BookResponse;
+import org.springframework.stereotype.Component;
+
+@Component
 public class BookMapper {
 
     public static BookResponse mapBookToBookResponse(Book book) {
@@ -17,7 +20,7 @@ public class BookMapper {
                 .build();
     }
 
-    public static Book mapBookUpdateRequestToBook(BookUpdateRequest request){
+    public static Book mapBookUpdateRequestToBook(BookUpdateRequest request) {
         return Book.builder()
                 .bookName(request.getBookName())
                 .author(request.getAuthor())

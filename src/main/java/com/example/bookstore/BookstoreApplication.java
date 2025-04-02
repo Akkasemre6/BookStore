@@ -1,9 +1,6 @@
 package com.example.bookstore;
 
-import Entity.User.User;
-import Service.User.UserService;
 import org.springframework.boot.CommandLineRunner;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,18 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BookstoreApplication implements CommandLineRunner {
 
 
+    public static void main(String[] args) {
+        SpringApplication.run(BookstoreApplication.class, args);
+    }
 
 
-	public static void main(String[] args) {
-		SpringApplication.run(BookstoreApplication.class, args);
-	}
+    @Override
+    public void run(String... args) throws Exception {
 
 
-
-	@Override
-	public void run(String... args) throws Exception {
-
-
-
-	}
+    }
 }

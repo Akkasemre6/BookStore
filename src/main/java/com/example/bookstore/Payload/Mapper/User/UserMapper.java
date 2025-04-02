@@ -1,11 +1,15 @@
-package Payload.Mapper.User;
+package com.example.bookstore.Payload.Mapper.User;
 
-import Entity.User.User;
-import Payload.Response.User.UserResponse;
 
+import com.example.bookstore.Entity.User.User;
+import com.example.bookstore.Payload.Response.User.UserResponse;
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class UserMapper {
 
-    public UserResponse mapUserToUserResponse(User user){
+    public UserResponse mapUserToUserResponse(User user) {
 
         return UserResponse.builder()
                 .id(user.getId())
@@ -16,7 +20,7 @@ public class UserMapper {
                 .build();
     }
 
-    public User mapUserResponseToUser(UserResponse userResponse){
+    public User mapUserResponseToUser(UserResponse userResponse) {
         return User.builder()
                 .id(userResponse.getId())
                 .name(userResponse.getName())

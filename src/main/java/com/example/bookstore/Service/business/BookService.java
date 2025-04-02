@@ -1,23 +1,19 @@
-package Service.business;
+package com.example.bookstore.Service.business;
 
-import Entity.business.Book;
-import Payload.Mapper.Business.BookMapper;
-import Payload.Messages.ErrorMessages;
-import Payload.Messages.SuccessMessages;
-import Payload.Response.Business.BookResponse;
-import Payload.Response.Business.ResponseMessage;
-import Repository.business.BookRepository;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+
+import com.example.bookstore.Entity.business.Book;
+import com.example.bookstore.Payload.Mapper.Business.BookMapper;
+import com.example.bookstore.Payload.Messages.ErrorMessages;
+import com.example.bookstore.Payload.Messages.SuccessMessages;
+import com.example.bookstore.Payload.Response.Business.BookResponse;
+import com.example.bookstore.Payload.Response.Business.ResponseMessage;
+import com.example.bookstore.Repository.business.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -44,7 +40,7 @@ public class BookService {
 
     public ResponseEntity<List<BookResponse>> getAllBooks() {
         List<Book> books = bookRepository.findAll();
-        if(books.isEmpty()) {
+        if (books.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         List<BookResponse> response = books.stream().map(BookMapper::mapBookToBookResponse).toList();
@@ -53,14 +49,14 @@ public class BookService {
     }
 
     public ResponseEntity<BookResponse> getBookById(long id) {
-        if(findBookById(id) == null){
+        if (findBookById(id) == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         return ResponseEntity.ok(BookMapper.mapBookToBookResponse(findBookById(id)));
     }
 
     public ResponseEntity<BookResponse> updateBook(long id, Book book) {
-        if(findBookById(id) == null){
+        if (findBookById(id) == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         Book updateBook = bookRepository.getById(id);
@@ -68,7 +64,7 @@ public class BookService {
     }
 
     public String deleteBook(long id) {
-        if (findBookById(id) == null){
+        if (findBookById(id) == null) {
             return ErrorMessages.Book_NOT_FOUND;
         }
         bookRepository.deleteById(id);

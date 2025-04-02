@@ -1,10 +1,11 @@
-package Payload.Mapper.Business;
-
-import Entity.business.OrderItem;
-import Payload.Response.Business.OrderItemResponse;
+package com.example.bookstore.Payload.Mapper.Business;
 
 
+import com.example.bookstore.Entity.business.OrderItem;
+import com.example.bookstore.Payload.Response.Business.OrderItemResponse;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderItemMapper {
 
     public static OrderItemResponse mapOrderItemToOrderItemResponse(OrderItem orderItem) {

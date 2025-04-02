@@ -1,6 +1,7 @@
-package Payload.Request.business;
+package com.example.bookstore.Payload.Request.business;
 
-import Entity.business.Order;
+
+import com.example.bookstore.Entity.business.Order;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +14,6 @@ import lombok.NoArgsConstructor;
 
 
 public class BookUpdateRequest {
-
 
 
     private String bookName;
@@ -29,8 +29,6 @@ public class BookUpdateRequest {
     private String description;
 
     private Order order;
-
-
 
 
 }

@@ -1,6 +1,7 @@
-package Payload.Request.business;
+package com.example.bookstore.Payload.Request.business;
 
-import Payload.Response.Business.OrderItemResponse;
+
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +19,7 @@ public class OrderRequest {
 
 
     @NotNull
-    private List<OrderItemResponse> items;
+    private List<com.example.bookstore.Payload.Response.Business.OrderItemResponse> items;
 
 
 }

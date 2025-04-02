@@ -1,7 +1,8 @@
-package Entity.business;
+package com.example.bookstore.Entity.business;
 
+
+import com.example.bookstore.Entity.User.User;
 import jakarta.persistence.*;
-import Entity.User.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,9 +30,9 @@ public class Order {
 
     private double totalPrice;
 
-    public void calculateTotalPrice(){
+    public void calculateTotalPrice() {
         this.totalPrice = items.stream()
-                .mapToDouble(item-> item.getBook().getPrice() * item.getQuantity()).sum();
+                .mapToDouble(item -> item.getBook().getPrice() * item.getQuantity()).sum();
     }
 
 

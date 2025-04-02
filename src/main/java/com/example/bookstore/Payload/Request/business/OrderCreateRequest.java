@@ -1,6 +1,5 @@
-package Payload.Request.business;
+package com.example.bookstore.Payload.Request.business;
 
-import Payload.Response.Business.OrderItemResponse;
 import lombok.Data;
 
 import java.util.List;

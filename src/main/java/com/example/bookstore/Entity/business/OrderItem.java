@@ -1,4 +1,4 @@
-package Entity.business;
+package com.example.bookstore.Entity.business;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

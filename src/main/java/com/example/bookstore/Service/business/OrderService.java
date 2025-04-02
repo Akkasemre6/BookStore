@@ -1,20 +1,18 @@
-package Service.business;
+package com.example.bookstore.Service.business;
 
-import Entity.User.User;
-import Entity.business.Book;
-import Entity.business.Order;
-import Entity.business.OrderItem;
-import Payload.Mapper.Business.OrderMapper;
-import Payload.Request.business.OrderCreateRequest;
-import Payload.Response.Business.OrderResponse;
-import Repository.User.UserRepository;
-import Repository.business.BookRepository;
 
-import Repository.business.OrderRepository;
+import com.example.bookstore.Entity.business.Book;
+import com.example.bookstore.Entity.business.Order;
+import com.example.bookstore.Entity.business.OrderItem;
+import com.example.bookstore.Payload.Mapper.Business.OrderMapper;
+import com.example.bookstore.Payload.Request.business.OrderCreateRequest;
+import com.example.bookstore.Payload.Response.Business.OrderResponse;
+import com.example.bookstore.Repository.User.UserRepository;
+import com.example.bookstore.Repository.business.BookRepository;
+import com.example.bookstore.Repository.business.OrderRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 
 import java.util.List;
 
@@ -45,7 +43,7 @@ public class OrderService {
 
     public ResponseEntity<OrderResponse> getOrderById(long orderId) {
 
-        if(orderRepository.existsById(orderId)){
+        if (orderRepository.existsById(orderId)) {
             Order order = orderRepository.findById(orderId).orElseThrow();
             return ResponseEntity.ok(OrderMapper.mapOrderToOrderResponse(order));
         }

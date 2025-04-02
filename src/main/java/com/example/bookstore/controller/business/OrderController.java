@@ -1,16 +1,12 @@
-package controller.business;
+package com.example.bookstore.controller.business;
 
-import Entity.User.User;
-import Entity.business.Order;
-import Payload.Request.business.OrderCreateRequest;
-import Payload.Request.business.OrderRequest;
-import Payload.Response.Business.OrderResponse;
-import Service.business.OrderService;
+
+import com.example.bookstore.Payload.Request.business.OrderCreateRequest;
+import com.example.bookstore.Payload.Response.Business.OrderResponse;
+import com.example.bookstore.Service.business.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "/orders")
@@ -22,16 +18,14 @@ public class OrderController {
     @PostMapping
     public ResponseEntity<OrderResponse> createOrder
             (@RequestBody OrderCreateRequest request) {
-         return orderService.createOrder(request);
+        return orderService.createOrder(request);
 
     }
 
     @GetMapping(path = "/{orderId}")
-    private ResponseEntity<OrderResponse> getOrderById(@PathVariable long orderId){
+    private ResponseEntity<OrderResponse> getOrderById(@PathVariable long orderId) {
         return orderService.getOrderById(orderId);
     }
-
-
 
 
 }

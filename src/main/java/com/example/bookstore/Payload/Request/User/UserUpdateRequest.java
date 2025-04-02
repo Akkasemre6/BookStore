@@ -1,4 +1,4 @@
-package Payload.Request.User;
+package com.example.bookstore.Payload.Request.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

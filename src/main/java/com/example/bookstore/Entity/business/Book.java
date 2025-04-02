@@ -1,4 +1,4 @@
-package Entity.business;
+package com.example.bookstore.Entity.business;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -36,7 +36,6 @@ public class Book {
     private OrderItem orderItem;
 
     private int quantity;
-
 
 
 }

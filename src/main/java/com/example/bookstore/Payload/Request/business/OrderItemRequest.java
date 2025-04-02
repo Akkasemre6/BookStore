@@ -1,4 +1,4 @@
-package Payload.Request.business;
+package com.example.bookstore.Payload.Request.business;
 
 import lombok.Data;
 

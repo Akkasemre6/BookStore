@@ -1,4 +1,4 @@
-package Payload.Messages;
+package com.example.bookstore.Payload.Messages;
 
 public class SuccessMessages {
 
