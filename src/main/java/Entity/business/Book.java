@@ -18,7 +18,7 @@ import lombok.experimental.SuperBuilder;
 public class Book {
 
     @Id
-    private long id;
+    private Long id;
 
     private String bookName;
 
